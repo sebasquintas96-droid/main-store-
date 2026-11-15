@@ -10,7 +10,7 @@ $ident_number = $_POST['idnumber'];
 $mobile_phone = $_POST['mphone'];
 $email = $_POST['email'];
 $password = MD5($_POST['pswd']);
-$PHOTO_URL ='photos_default.png';
+$PHOTO_URL ='photos/photo_default.png';
  
 $sql_check_email = "SELECT * FROM users WHERE email='$email'";
 $res= pg_query($local_conn, $sql_check_email);
@@ -19,16 +19,15 @@ if($total<1){
 // Prepare query
 $sql = "
             INSERT INTO
-            users (firstname, lastname, ident_number, mobile_phone, email, password, url_photo, mobile_phone)
+            users (firstname, lastname, ident_number, mobile_phone, email, password, url_photo)
             VALUES (
             '$firstname',
             '$lastname',
             '$ident_number',
             '$mobile_phone',
             '$email',
-            '$password'
+            '$password',
             '$PHOTO_URL'
-            '$mobile_phone'
             )";
  
 // Execute query
