@@ -49,8 +49,8 @@
                 <td><?= $row['email'] ?></td>
                 <td><?= $row['mobile_phone'] ?></td>
                 <td><?= $row['status'] ?></td>
-                <td align="<center>">
-                    <a href="#">
+                <td align="center">
+                    <a href="edit_user.php?userID=<?php echo $row['id']; ?>">
                         <img src="icons/edit.png" alt="Edit user"  width="20">
                     </a>
                     <a href="#">
@@ -66,7 +66,7 @@
 
            <?php } ?>
 
-        <table>
+        </table>
     </body>
  </html>
  
